@@ -1,6 +1,6 @@
 [package]
 name = "floating-todo"
-version = "1.0.0"
+version = "1.0.1"
 description = "TODO · 轻量悬浮待办（macOS/Windows）"
 authors = ["gaopengfei"]
 edition = "2021"

@@ -54,9 +54,9 @@ TODO 以悬浮球形态常驻桌面，用于快速记录和查看待办。所有
 
 | 平台 | 安装包 | 适用 |
 |------|--------|------|
-| macOS (Apple Silicon) | `TODO_1.0.0_aarch64.dmg` | M 系列芯片 |
-| macOS (Intel) | `TODO_1.0.0_x64.dmg` | Intel 芯片 |
-| Windows | `TODO_1.0.0_x64-setup.exe` | Windows 10/11 64 位 |
+| macOS (Apple Silicon) | `TODO_1.0.1_aarch64.dmg` | M 系列芯片 |
+| macOS (Intel) | `TODO_1.0.1_x64.dmg` | Intel 芯片 |
+| Windows | `TODO_1.0.1_x64-setup.exe` | Windows 10/11 64 位 |
 
 ### 首次运行被系统拦截
 
@@ -105,3 +105,14 @@ todo/
 ├─ .github/workflows/    # 跨平台自动构建
 └─ legacy-macos-swift/   # 早期 macOS 原生 Swift 版（存档）
 ```
+
+## 贡献
+
+欢迎提交 issue 和 pull request，详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+- Bug 报告与功能建议：在 [Issues](../../issues) 提交
+- 代码贡献：Fork 后提交 pull request，合并前需维护者 review 通过
+
+## 许可证
+
+[MIT](LICENSE) © 2026 钟全超 (zhongquanchao)
