@@ -54,9 +54,9 @@ TODO 以悬浮球形态常驻桌面，用于快速记录和查看待办。所有
 
 | 平台 | 安装包 | 适用 |
 |------|--------|------|
-| macOS (Apple Silicon) | `TODO_1.0.1_aarch64.dmg` | M 系列芯片 |
-| macOS (Intel) | `TODO_1.0.1_x64.dmg` | Intel 芯片 |
-| Windows | `TODO_1.0.1_x64-setup.exe` | Windows 10/11 64 位 |
+| macOS (Apple Silicon) | `TODO_1.0.2_aarch64.dmg` | M 系列芯片 |
+| macOS (Intel) | `TODO_1.0.2_x64.dmg` | Intel 芯片 |
+| Windows | `TODO_1.0.2_x64-setup.exe` | Windows 10/11 64 位 |
 
 ### 首次运行被系统拦截
 
