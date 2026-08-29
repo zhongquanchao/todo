@@ -181,6 +181,16 @@ export function normalizeItem(it) {
   };
 }
 
+/* 每天常驻待办：额外保留 streak / lastDone（连胜与跨天重置依赖这两个字段） */
+export function normalizeRecurringItem(it) {
+  const base = normalizeItem(it);
+  return {
+    ...base,
+    streak: typeof it.streak === "number" ? it.streak : 0,
+    lastDone: it.lastDone || null,
+  };
+}
+
 export function normalizeProjects(list) {
   const seen = new Set();
   const out = [];
@@ -265,7 +275,7 @@ export function migrateState(raw, now = new Date()) {
     }
   }
   s.items = items;
-  s.recurringItems = (raw.recurringItems || []).map(normalizeItem);
+  s.recurringItems = (raw.recurringItems || []).map(normalizeRecurringItem);
   s.projects = normalizeProjects(raw.projects || []);
   s.projects = ensureProjects(s.projects, s.items);
 

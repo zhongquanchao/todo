@@ -154,6 +154,18 @@ test("migrateState: 已是新版则原样保留 items", () => {
   assert.equal(s.view, "today");
 });
 
+test("migrateState: 每天常驻保留 streak 与 lastDone（连胜/跨天重置依赖）", () => {
+  const s = migrateState(
+    {
+      recurringItems: [{ id: "r1", title: "喝水", completed: true, streak: 7, lastDone: "2026-8-29" }],
+    },
+    NOW
+  );
+  assert.equal(s.recurringItems[0].title, "喝水");
+  assert.equal(s.recurringItems[0].streak, 7);
+  assert.equal(s.recurringItems[0].lastDone, "2026-8-29");
+});
+
 /* ---------------- 项目清理 ---------------- */
 
 test("autoArchiveProjects: 全部完成 → 归档", () => {
