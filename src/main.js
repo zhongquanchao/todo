@@ -333,9 +333,9 @@ function render() {
   // 头部
   const sub = cnt === 0 ? "已经清空" : `${VIEW_TITLE[view]}还有 ${cnt} 件事`;
   html += `<div class="header">
-    <div class="titles"><h1>TODO</h1><p>${sub}</p></div>
-    <div class="spacer"></div>
-    <div class="count-pill ${cnt === 0 ? "zero" : ""}">${cnt}</div>
+    <div class="titles" data-tauri-drag-region><h1>TODO</h1><p>${sub}</p></div>
+    <div class="spacer" data-tauri-drag-region></div>
+    <div class="count-pill ${cnt === 0 ? "zero" : ""}" data-tauri-drag-region>${cnt}</div>
     <button class="icon-btn" data-act="collapse" title="收起为悬浮球">${ICONS.minimize}</button>
     <button class="icon-btn" data-act="settings" title="设置">${ICONS.gear}</button>
   </div>`;
@@ -469,9 +469,6 @@ function render() {
 
   app.innerHTML = html;
 
-  const header = app.querySelector(".header");
-  if (header) header.addEventListener("mousedown", onDragStart);
-
   if (focusMain) {
     const mi = document.getElementById("main-input");
     if (mi) { mi.focus(); mi.setSelectionRange(mi.value.length, mi.value.length); }
@@ -500,11 +497,6 @@ let projectComposerOpen = false;
 let focusMain = false;
 let focusRecur = false;
 let focusProj = false;
-
-function onDragStart(e) {
-  if (e.target.closest("button")) return;
-  appWindow?.startDragging().catch(() => {});
-}
 
 /* 事件委托 */
 app.addEventListener("click", (e) => {

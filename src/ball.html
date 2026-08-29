@@ -9,8 +9,8 @@
   </head>
   <body class="ball-body">
     <div id="ball" class="ball">
-      <!-- 外层玻璃环：可拖动区域（拖到任意屏幕/不同 DPI） -->
-      <div class="ball-drag" data-tauri-drag-region></div>
+      <!-- 外层玻璃环：随球整体拖动（见 ball.js 手势处理） -->
+      <div class="ball-drag"></div>
       <!-- 中心水滴：点击展开面板（以球当前位置为锚点） -->
       <button class="ball-core" id="expand" title="展开待办">
         <span class="ball-count" id="count">0</span>

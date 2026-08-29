@@ -43,6 +43,25 @@ document.getElementById("expand")?.addEventListener("click", (e) => {
   expand();
 });
 
+// 手势拖动：按住球任意位置移动超过阈值则拖动窗口，短按中心则展开
+const ballEl = document.getElementById("ball");
+let pointerDown = null;
+
+ballEl?.addEventListener("pointerdown", (e) => {
+  pointerDown = { x: e.screenX, y: e.screenY };
+});
+
+ballEl?.addEventListener("pointermove", (e) => {
+  if (!pointerDown) return;
+  if (Math.abs(e.screenX - pointerDown.x) > 4 || Math.abs(e.screenY - pointerDown.y) > 4) {
+    pointerDown = null;
+    appWindow?.startDragging?.().catch(() => {});
+  }
+});
+
+window.addEventListener("pointerup", () => { pointerDown = null; });
+window.addEventListener("pointercancel", () => { pointerDown = null; });
+
 // 主面板收起/数据变化时，通知球刷新计数
 TAURI?.event?.listen?.("ball-update", refresh);
 TAURI?.event?.listen?.("ball-count", (e) => {
